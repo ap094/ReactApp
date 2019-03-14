@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #b2b1bd;
+  background-color: #d1cdff;
 }
 input.btn.btn-primary
 {
@@ -19,10 +19,33 @@ input.btn.btn-primary
   position: absolute;
   left: 150px;
   right: 150px;
-  top: 150px;
+  top: 100px;
+  margin-bottom: 150px;
   width: 500px;
   border: 1px solid black;
   border-radius: 10px;
   padding: 15px 20px 15px 20px;
   background-color: #94beff;
+}
+#user
+{
+  text-align: center;
+  margin-top: 50px;
+}
+#clock
+{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+#clock >  .clock
+{
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 300px;
+  padding: 10px 15px 10px 15px;
+  background-color: rgb(21, 132, 160);
+  margin-left: 80%;
+  text-align: center;
+  color: white;
+   
 }
