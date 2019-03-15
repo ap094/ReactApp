@@ -3,30 +3,10 @@ body {
   padding: 0;
   background-color: #f0f0f0;
 }
-input.btn.btn-primary
-{
-  margin-top: 30px;
-  margin-left: 180px;
-}
 #root
 {
-  position: relative;
   height: 100%;
   width: 100%;
-}
-.container
-{
-  position: absolute;
-  left: 150px;
-  right: 150px;
-  top: 100px;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  width: 500px;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 15px 20px 15px 20px;
-  background-color: #94beff;
 }
 #clock
 {
@@ -44,4 +24,35 @@ input.btn.btn-primary
   text-align: center;
   color: white;
    
+}
+.weather
+{
+  position: absolute;
+  width: 550px;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -150px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+.textInfo
+{
+  text-align: center;
+}
+.form-control
+{
+  margin-bottom: 10px;
+}
+.btn 
+{
+  margin-top: 15px;
+  margin-left:37%;
+}
+.weather__key
+{
+  margin-top: 20px;
 }

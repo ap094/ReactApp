@@ -1,54 +1,17 @@
-import React, { Component } from 'react';
+import React from "react";
 
+class Form extends React.Component{
 
-class Form extends Component {
-    constructor(props) {
-        super(props);
+    render(){
 
-        this.initialState = {
-            name: '',
-            job: ''
-        };
-
-        this.state = this.initialState;
-    }
-
-    handleChange = event => {
-        const {name, value} = event.target;
-    
-        this.setState({
-            [name] : value
-        });
-    }
-
-    submitForm = () => {
-        this.props.handleSubmit(this.state);
-        this.setState(this.initialState);
-    }
-
-    render() {
-        const { name, job } = this.state; 
-    
-        return (
-            <form className="form-group">
-                <label>Name:</label>
-                <input 
-                    type="text" 
-                    name="name" 
-                    value={name} 
-                    onChange={this.handleChange} className="form-control"/>
-                <label>Job:</label>
-                <input 
-                    type="text" 
-                    name="job" 
-                    value={job} 
-                    onChange={this.handleChange} className="form-control"/>
-                 <input 
-                    type="button" 
-                    value="Submit" 
-                    onClick={this.submitForm} className="btn btn-primary"/>
-            </form>
-        );
+        return(
+                <form onSubmit = {this.props.loadWeather}>
+                    <input class="form-control" type="text" name="city" placeholder="City..."/>
+                    <input class="form-control" type="text" name="country" placeholder="Country..."/>
+                    <button class="btn btn-info">Get Weather</button>
+                </form>
+           
+        )
     }
 }
 

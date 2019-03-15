@@ -1,42 +1,68 @@
-import React, {Component} from 'react';
-import Table from './Table';
-import Form from './Form';
+import React from "react";
+import Weather from "./weather";
+import Form from "./form";
+import Titles from "./titles";
 
-class App extends Component{
-    state = {
-            
-        characters: []
+const Api_Key = "11c135f01945721cee17d80e03889d51";
 
-    };
+class App extends React.Component {
 
-    removeCharacter = index => {
-        const { characters } = this.state;
-    
-        this.setState({
-            characters: characters.filter((character, i) => { 
-                return i !== index;
-            })
-        });
+  state = {
+
+    temperature: undefined,
+    city: undefined,
+    country: undefined,
+    humidity: undefined,
+    description: undefined,
+    error: undefined
+  }
+
+  getWeather = async (e) => {
+
+    const city = e.target.elements.city.value;
+    const country = e.target.elements.country.value;
+
+    e.preventDefault();   
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`);
+    const response = await api_call.json();
+
+    console.log(response);
+
+    if(city && country){
+      this.setState({
+        temperature: response.main.temp,
+        city: response.name,
+        country: response.sys.country,
+        humidity: response.main.humidity,
+        description: response.weather[0].description,
+        error: ""
+      })
+    }else{
+      this.setState({
+        error: "Please input search values..."
+      })
     }
+  }
 
-    handleSubmit = character => {
-        this.setState({characters: [...this.state.characters, character]});
-    }
+  render() {
 
-    render() {
+    return (
 
-        return (
-            <div className="container">
-                <Table 
-                    characterData={this.state.characters} 
-                    removeCharacter={this.removeCharacter}
-                />
+        <div className="weather">
+            <Titles />
+            <Form loadWeather={this.getWeather} />
+            <Weather
+                temperature={this.state.temperature}
+                city={this.state.city}
+                country={this.state.country}
+                humidity={this.state.humidity}
+                description={this.state.description}
+                error={this.state.error}
+            />
+        </div>          
 
-                <Form handleSubmit={this.handleSubmit} />
-
-            </div>
-        );
-    }
+    )
+  }
 }
 
 export default App;
