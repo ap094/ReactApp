@@ -1,12 +1,7 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  background-color: #f0f0f0;
-}
-#root
-{
-  height: 100%;
-  width: 100%;
+  background-color: rgba(0, 0, 255, 0.7);
 }
 #clock
 {
@@ -20,39 +15,83 @@ body {
   width: 300px;
   padding: 10px 15px 10px 15px;
   background-color: rgb(21, 132, 160);
-  margin-left: 80%;
   text-align: center;
   color: white;
-   
+  margin-left: 40%;
 }
 .weather
 {
   position: absolute;
-  width: 550px;
-  height: auto;
-  left: 50%;
-  top: 50%;
+  width: 600px;
+  height: 600px;
+  left: 48%;
+  top: 45%;
   margin-left: -250px;
   margin-top: -150px;
+  margin-bottom: 100px;
   padding: 20px;
   border: 1px solid black;
   border-radius: 10px;
   line-height: 1.6;
+  background-image: url("./images/img.jpg");
+  background-position: center;
+  background-size: cover;
 }
 .textInfo
 {
   text-align: center;
+  font-family: Comic Sans MS;
+  border: 1px solid blue;
+  border-radius: 10px;
+  width: auto;
+  margin-bottom: 10px;
+  margin-left: 66px;
+  background-color: rgba(0,80,200,0.8);
+  padding-top: 10px;
+  color: white;
+  width: 400px;
 }
 .form-control
 {
   margin-bottom: 10px;
+  margin-left: 115px;
+  width: 300px;
 }
 .btn 
 {
   margin-top: 15px;
   margin-left:37%;
 }
-.weather__key
+.weather-info
 {
   margin-top: 20px;
+  padding-top: 15px;
+  margin-left: 115px;
+  color: white;
+}
+#root > div > div.weather-info > p
+{
+  font-family: "Comic Sans MS";
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid rgba(74, 147, 200);
+  border-radius: 5px;
+  background-color: rgba(74, 147, 200, 0.8);
+  padding: 5px 15px 5px 15px;
+  width: 300px;
+}
+
+#root > div > div.weather-info > p > span
+{
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+}
+div.weather-info > h3
+{
+  color: red;
+  font-family: "Comic Sans MS";
+  font-weight: bolder;
+  margin-left: -50px;
 }

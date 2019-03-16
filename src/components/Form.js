@@ -3,14 +3,12 @@ import React from "react";
 class Form extends React.Component{
 
     render(){
-
         return(
-                <form onSubmit = {this.props.loadWeather}>
-                    <input class="form-control" type="text" name="city" placeholder="City..."/>
-                    <input class="form-control" type="text" name="country" placeholder="Country..."/>
-                    <button class="btn btn-info">Get Weather</button>
-                </form>
-           
+            <form onSubmit = {this.props.loadWeather}>
+                <input className="form-control" type="text" name="city" placeholder="city"/>
+                <input className="form-control" type="text" name="country" placeholder="country code (e.g: hr)"/>
+                <button className="btn btn-success">Get Weather</button>
+            </form>
         )
     }
 }
