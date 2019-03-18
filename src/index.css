@@ -1,12 +1,15 @@
 body {
   margin: 0 auto;
   padding: 0;
-  background-color: rgba(20, 89, 255, 0.7);
 }
 #clock
 {
   padding-top: 20px;
   padding-bottom: 20px;
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+
 }
 #clock >  .clock
 {
@@ -17,17 +20,16 @@ body {
   background-color: rgb(21, 132, 160);
   text-align: center;
   color: white;
-  margin-left: 40%;
 }
 .weather
 {
   position: absolute;
   width: 600px;
-  height: 600px;
+  height: 620px;
   left: 48%;
   top: 45%;
   margin-left: -250px;
-  margin-top: -150px;
+  margin-top: -200px;
   margin-bottom: 100px;
   padding: 20px;
   border: 1px solid black;
@@ -88,10 +90,8 @@ body {
   font-weight: bold;
   font-style: italic;
 }
-div.weather-info > h3
+#err
 {
   color: red;
   font-family: "Comic Sans MS";
-  font-weight: bolder;
-  margin-left: -50px;
 }

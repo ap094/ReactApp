@@ -30,7 +30,7 @@ class Weather extends React.Component{
                 }
 
                 {
-                    this.props.error && <h3 className="weather__error">{this.props.error}</h3>
+                    this.props.error && <strong id="err" className="weather__error">{this.props.error}</strong>
                 }
         
             </div>
