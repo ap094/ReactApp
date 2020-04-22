@@ -40,7 +40,7 @@ export default class App extends React.Component {
                 return;
             }
 
-            if (country.length < 2 || country.length > 2) {
+            if (country.length < 2 || country.length > 3) {
                 this.setState({
                     error: 'Please input correct country code!'
                 });

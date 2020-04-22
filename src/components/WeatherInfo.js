@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function WeatherInfo(props) {
-    return(
+    return (
         <div className="weather-info">
             {
                 props.error &&
