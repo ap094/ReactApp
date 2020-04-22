@@ -1,35 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-class Clock extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {date: new Date()};
-    }
-  
-    componentDidMount() {
-      this.timerID = setInterval(
-        () => this.tick(),
-        1000
-      );
-    }
-  
-    componentWillUnmount() {
-      clearInterval(this.timerID);
-    }
-  
-    tick() {
-      this.setState({
-        date: new Date()
-      });
-    }
-  
-    render() {
-      return (
-        <div className="clock">
-          <h2>{this.state.date.toLocaleTimeString()}.</h2>
-        </div>
-      );
-    }
-  }
+export default function Clock() {
+    const [ time, setTime ] = useState(new Date());
 
-  export default Clock;
+    useEffect(() => {
+        const tickTock = () => setTime(new Date());
+        const timerId = setInterval(tickTock, 1000);
+
+        return () => clearInterval(timerId);
+    }, [time]);
+
+    return (
+        <>
+            <div className="time">
+                <i className="fa fa-clock-o clockIcon" aria-hidden="true"></i>
+                <p>{time.toLocaleTimeString()}</p>
+            </div>
+            <span className="verticalLine">|</span>
+            <div className="date">
+                <i className="fa fa-calendar calendarIcon" aria-hidden="true"></i>
+                <p>{time.toLocaleDateString()}</p>
+            </div>
+        </>
+    );
+}

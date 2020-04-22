@@ -1,99 +1,107 @@
 body {
-  margin: 0 auto;
-  padding: 0;
+    background: url("./images/backgroundImage.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0 auto;
+    padding: 0;
 }
-#clock
-{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: row; 
-  justify-content: center;
-
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-#clock >  .clock
-{
-  border: 1px solid black;
-  border-radius: 10px;
-  width: 300px;
-  padding: 10px 15px 10px 15px;
-  background-color: rgb(21, 132, 160);
-  text-align: center;
-  color: white;
+#clock {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }
-.weather
-{
-  position: absolute;
-  width: 600px;
-  height: 620px;
-  left: 48%;
-  top: 45%;
-  margin-left: -250px;
-  margin-top: -200px;
-  margin-bottom: 100px;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 10px;
-  line-height: 1.6;
-  background-image: url("./images/img.jpg");
-  background-position: center;
-  background-size: cover;
+#clock > .date, .time {
+    position: relative;
 }
-.textInfo
-{
-  text-align: center;
-  font-family: Comic Sans MS;
-  border: 1px solid blue;
-  border-radius: 10px;
-  width: auto;
-  margin-bottom: 10px;
-  margin-left: 66px;
-  background-color: rgba(0,80,200,0.8);
-  padding-top: 10px;
-  color: white;
-  width: 400px;
+.date, .time p {
+    font-size: 25px;
+    font-weight: bold;
 }
-.form-control
-{
-  margin-bottom: 10px;
-  margin-left: 115px;
-  width: 300px;
+.time > p {
+    margin-top: 2px;
 }
-.btn 
-{
-  margin-top: 15px;
-  margin-left:37%;
+.date > p {
+    margin-top: 2px;
+    margin-left: 32px;
 }
-.weather-info
-{
-  margin-top: 20px;
-  padding-top: 15px;
-  margin-left: 115px;
-  color: white;
+.clockIcon {
+    position: absolute;
+    left: -30px;
+    top: 10px;
+    font-size: 25px;
 }
-#root > div > div.weather-info > p
-{
-  font-family: "Comic Sans MS";
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  border: 1px solid rgba(74, 147, 200);
-  border-radius: 5px;
-  background-color: rgba(74, 147, 200, 0.8);
-  padding: 5px 15px 5px 15px;
-  width: 300px;
+.calendarIcon {
+    position: absolute;
+    left: 1px;
+    top: 8px;
+    font-size: 25px;
 }
-
-#root > div > div.weather-info > p > span
-{
-  color: white;
-  font-weight: bold;
-  font-style: italic;
+.verticalLine {
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
-#err
-{
-  color: red;
-  font-family: "Comic Sans MS";
-  font-weight: bold;
-  font-size: 20px;
+.weather {
+    height: auto;
+    line-height: 2;
+    padding: 25px 100px 100px 100px;
+    border-radius: 10px;
+}
+.textInfo {
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-size: 20px;
+    color: black;
+    padding-bottom: 25px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-control {
+    margin-bottom: 10px;
+    width: 300px;
+}
+.btn {
+    margin-top: 15px;
+}
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+#root > div > div.weather-info > p {
+    font-family: "Comic Sans MS";
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: rgba(74, 147, 200, 0.8);
+    padding: 5px 15px 5px 15px;
+    width: 300px;
+}
+#root > div > div.weather-info > p > span {
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+}
+#err {
+    color: white;
+    font-family: "Comic Sans MS";
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background:rgb(220, 31, 58);
+    padding: 10px;
 }
