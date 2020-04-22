@@ -15,6 +15,8 @@ export default class App extends React.Component {
             description: null,
             error: null,
         }
+
+        this.baseState = this.state;
     }
 
     getWeather = async (city, countryCode) => {
@@ -55,6 +57,10 @@ export default class App extends React.Component {
         }
     }
 
+    resetForm = () => {
+        this.setState(this.baseState);
+    }
+
     render() {
         return (
             <div className="weather">
@@ -62,7 +68,7 @@ export default class App extends React.Component {
                     <h3>Weather forecast</h3>
                     <p>Helps you find weather conditions in cities...</p>
                 </div>
-                <Form getWeather={this.getWeather} />
+                <Form getWeather={this.getWeather} resetForm={this.resetForm} />
                 <WeatherInfo
                     temperature={this.state.temperature}
                     city={this.state.city}

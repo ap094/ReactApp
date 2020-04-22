@@ -73,13 +73,13 @@ body {
 }
 .btn {
     margin-top: 15px;
+    margin-right: 130px;
 }
 .weather-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
 }
 #root > div > div.weather-info > p {
     font-family: "Comic Sans MS";
@@ -104,4 +104,11 @@ body {
     border-radius: 10px;
     background:rgb(220, 31, 58);
     padding: 10px;
+}
+.resetBtn {
+    margin-top: -74px;
+    margin-left: 260px;
+}
+.refreshIcon {
+    padding-right: 5px;
 }
