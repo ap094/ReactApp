@@ -8,39 +8,34 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            temperature: undefined,
-            city: undefined,
-            country: undefined,
-            humidity: undefined,
-            description: undefined,
-            error: undefined,
+            temperature: null,
+            city: null,
+            country: null,
+            humidity: null,
+            description: null,
+            error: null,
         }
     }
 
-    getWeather = async (e) => {
+    getWeather = async (city, countryCode) => {
         try {
-            const city = e.target.elements.city.value;
-            const country = e.target.elements.country.value;
-            e.preventDefault();
-
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${API_KEY}`);
+            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&units=metric&appid=${API_KEY}`);
+            if (response.status !== 200) {
+                this.setState({
+                    error: 'Weather data not found!',
+                });
+                return;
+            }
             const data = await response.json();
 
-            if (!(city && country)) {
+            if (!(city && countryCode)) {
                 this.setState({
                     error: 'Please input both fields!',
                 });
                 return;
             }
 
-            if (data.cod === '404') {
-                this.setState({
-                    error: 'Weather data for given city not found!',
-                });
-                return;
-            }
-
-            if (country.length < 2 || country.length > 3) {
+            if (countryCode.length < 2 || countryCode.length > 3) {
                 this.setState({
                     error: 'Please input correct country code!'
                 });
